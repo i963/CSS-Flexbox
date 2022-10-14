@@ -1,0 +1,431 @@
+/*Обнуление - Нихуя не понятно, что и зачем*/
+/* !ПРОГУГЛИТЬ ПО ПУНКТАМ */
+/* обнулить все дефолтные внутреннние/внешние отступы и границы браузера */
+* {padding:0;margin:0;border:0;}
+/* какая-то хуйня для всех браузеров */
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+/* сделать все элменты сайта блочными - ? */
+nav,footer,header,aside{display:block;}
+/* задать размеры на весь экран, размер шрифта 100%, высоту строки, размер шрифта занчение? */
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:18px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+/* наследовать шрифт у родителя body  */
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+/* курсор при наведении на конпку - указатель */
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+/* не подчеркивать ссылки и посещенные ссылки */
+a,a:visited{text-decoration:none;}
+/* не подчеркивать ссылки при наведении */
+a:hover{text-decoration:none;}
+/* убрать дефолтные маркеры списка */
+ul li{list-style:none;}
+img{vertical-align:top;}
+/* все заголовки - наследовать размеры и стиль (жирный, курсив) у родителя body */
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/*--------------------*/
+
+body {
+   height: 100%;
+   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.wrapper {
+   /* оболчка на всю высоту экрана */
+   min-height: 100%;
+   /* запрет на показ всего, что может вылезти за пределы экрана */
+	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+}
+
+/* универсальный внутренний контейнер для кажого блока */
+.container{
+   /* ширина контента по макету без полей */
+   max-width: 1180px;
+	margin: 0px auto;
+}
+
+.content {
+   /* прижать футер кo дну контейнера сразу же */
+   flex: 1 1 auto;
+}
+
+/* ВLOCK 1. HI */
+
+.hi {
+   padding: 50px 0;
+   background-color: #445162;   
+}
+
+.hi__box {
+	display: flex;
+   justify-content: space-between;
+}
+
+.hi__body {
+	color: #ffffff;	
+   padding: 0px 20px 0px 0px;
+}
+
+.hi__title {
+   margin: 0px 0px 40px 0px;
+	text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+   text-transform: uppercase;
+	font-size: 60px;
+}
+
+.hi__list {}
+
+.hi__list li {
+   margin: 0px 0px 15px 0px;
+	padding: 0px 0px 0px 36px;
+   /* добавление кастомного маркера + left чтоб был только в начале списка + запрет на повтор  */
+   background: url(image/icons/hi_icon.png) left no-repeat;
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+   font-size: 20px;
+}
+
+/* убрать марджин для последнего пункта в списке, чтоб не было схлопывания */
+.hi__list li:last-child{margin: 0;}
+
+.hi__image {
+   /* ! по другому задаем размеры, т. к это флекс-элемент 
+   (запрещено увеличиваться grow:0, запрещено уменьшаться shrink:0, basis: 469 px ширина по макету*/
+   flex: 0 0 469px;
+}
+
+/* ВLOCK 2. WHAT */
+
+.what {
+   padding: 50px 0;
+}
+
+.what__box {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row-reverse;
+}
+
+.what__body {
+   padding: 0 0 0 40px;
+
+}
+
+.what__title  {
+   margin: 0 0 35px 0;
+
+}
+
+.title {
+   font-size: 30px;
+   line-height: 36px;
+/* */
+   color: #445161;
+}
+
+.what__text {
+   margin: 0px 70px 0px 0px;
+}
+
+p {
+	margin: 0px 0px 30px 0px;
+
+}
+
+p:last-child {margin-bottom: 0;}
+
+.text {
+   font-size: 16px;
+   line-height: 24px;
+   color: #333333;
+}
+
+.what__image {
+   margin: 0px 0px 50px 0px;
+   /* ! по другому задаем размеры, т. к это флекс-элемент 
+   (запрещено увеличиваться grow:0, запрещено уменьшаться shrink:0, basis: 430 px ширина по макету*/
+   flex: 0 0 430px;
+}
+
+/* ВLOCK 3. COLUMNS */
+
+.columns {
+/* убираем отступ внизу на 30 пикселей, т.к. столько же отступ от контейнера у внутренних микро-блоков */
+   padding: 50px 0px 20px 0px;
+   background-color: #f5f5f5;
+}
+
+.columns__title {
+   margin: 0px 0px 30px 0px;
+   text-align: center;
+}
+
+.columns__box {
+   display: flex;
+   flex-wrap: wrap;
+   /* !задать пробел 20 px между колoнками внутри бокса: 
+   отрицательный марджин на половину размера отступа у флексбокса + падинг на половину размера отступа у внутреннего микро-блока */
+   margin: 0 -10px;
+}
+
+.columns__column {
+/* две одинаковые колонки
+(запрещено увеличиваться grow: 0, разрешено уменьшаться shrink:1, basis:50% - 0,5 ширины экрана */
+   flex: 0 1 50%;
+   margin: 0px 0px 30px 0px;
+   padding: 0px 10px;
+}
+
+/* ! нахуя эта дополнительная оболочка непонятно */
+/* может с запасом на возможное добавление контента в мини-блоки? чтобы потом не делить пространство между мини-флексбоксом и просто контентом */
+.columns__item {
+}
+
+.item {
+}
+
+.item__box {
+   display: flex;
+}
+
+.item__image {
+   /* ! по другому задаем размеры, т. к это флекс-элемент 
+   (запрещено увеличиваться grow:0, запрещено уменьшаться shrink:0, basis: 200 px ширина по макету*/
+   flex: 0 0 200px;
+}
+
+.item__body {
+   /* разрешено делать все */
+   flex: 1 1 auto;
+   padding: 0px 0px 0px 15px;
+}
+
+.item__title {
+   margin: 0px 0px 15px 0px;
+   font-size: 24px;
+   line-height: 30px;
+   color: #445161;
+
+}
+
+.item__text {
+}
+
+
+/* ВLOCK 4. VERTICAL */
+
+.vertical {
+   padding: 50px 0;
+}
+
+.vertical__title {
+	text-align: center;
+	margin: 0px 0px 30px 0px;
+}
+
+.vertical__body {
+   /* способ задать три равные колонки, у которых ширина блока меньше общего контейнера
+   задать блоку max-width по макету (сумма 3 колонок + отступы) + задать flex: 0 1 33.333%; колонкам  */
+   max-width: 990px;
+   margin: 0 100px;
+}
+
+.vertical__box {
+   display: flex;
+   margin: 0 -22.5px;
+}
+
+.vertical__column {
+   flex: 0 1 33.333%;
+   padding: 0 22.5px;
+}
+
+.vertical__item {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   padding: 0 0 20px 0;
+   background-color: #445162;
+   border: 2px solid #445162;
+   border-radius: 5px;
+   color: #ffffff;
+   
+}
+
+.vertical__subtitle {
+   text-align: center;
+   font-size: 24px;
+   line-height: 30px;
+   text-transform: uppercase;
+}
+
+.vertical__label {
+   text-align: center;
+   padding: 15px 0;
+   font-size: 40px;
+   line-height: 30px;
+   text-transform: uppercase;
+   color: #445162;
+   background-color: #ffffff;
+
+
+}
+.vertical__text {
+   padding: 20px;
+   font-size: 14px;
+   line-height: 24px;
+   flex: 1 1 auto;
+
+}
+
+.vertical__btn {
+   display: flex;
+   margin: 0 20px;
+   justify-content: center;
+   align-items: center;
+   border-radius: 5px;
+	height: 40px;
+   background-color: #ffffff;
+   text-align: center;
+   text-transform: uppercase;
+   font-size: 18px;
+   line-height: 18px;
+   color: #445161;
+}
+
+/* !ПРИБИТЬ КОНПКУ КO ДНУ БЛОКА */
+
+/* задать родителю параметры
+
+.vertical__item {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+   блоку перед кнопкой 
+      flex: 1 1 auto;
+
+      самой кнопке
+         display: flex;
+
+   
+   */
+
+
+/* FOOTER */
+
+.footer {
+	background-color: #f5f5f5;
+}
+
+.footer__row {
+   display: flex;
+   height: 65px;
+   /* выровнять надпись по центру футера */
+   justify-content: center;
+   align-items: center;
+}
+
+.footer__text {
+   color: #445162;
+   font-size: 12px;
+   letter-spacing: 0.3px;
+}
+
+
+/* ПРИБИТЬ ФУТЕР  */
+
+/* 
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex: 0 0 auto;
+}
+	
+*/
+
+/* .vertical__text p {
+   margin: 0 0 30px 0;
+}
+
+.vertical__text p:last-child {margin: 0} */
+
+/* .vertical__block {
+   margin: 0 50px 0 0;
+   flex: 0 1 33.33%;
+   background: url(image/bg_422.jpg) no-repeat;
+
+}
+
+.block__box {
+   display: flex;
+   flex-wrap: wrap; 
+   flex-direction: column;
+   align-items: center;
+
+}
+
+.block__body {
+   flex: 1 1 auto;
+}
+
+.block__title {
+   align-self: center;
+   font-size: 24px;
+   line-height: 30px;
+   text-transform: uppercase;
+   color: #ffffff;
+}
+
+.block__subtitle {
+   width: 300px;
+   height: 71px;
+   font-size: 40px;
+   line-height: 30px;
+   color: #445162;
+   border: 2px solid #445162;
+}
+
+.block__text {
+   font-size: 14px;
+   line-height: 24px;
+   color: #ffffff;
+}
+
+.block__button {
+   display: flex;
+   width: 260px;
+   height: 40px;
+   bottom: 20px;
+   justify-content: center;
+   align-items: center;
+   background-color: #ffffff;
+}
+
+.button__text {
+   font-size: 18px;
+   line-height: 18px;
+   font-weight: 700;
+   text-transform: uppercase;
+   color: #445161;
+} */
+
+

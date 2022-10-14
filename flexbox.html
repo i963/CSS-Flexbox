@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- Адаптив -->
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+      <title>flexbox site</title>
+
+   <link rel="stylesheet" href="style_flexbox.css">
+   <link rel="shortcut icon" href="image/icons/main_icon.png" type="image/x-icon">
+
+   </head>
+
+   <body>
+      <!-- общая оболочка -->
+      <div class="wrapper">
+         <!-- в макете нет хедера! - поэтому без него -->
+         <div class="content">
+            <div class="hi">
+               <div class="container">
+                  <div class="hi__box">
+                     <div class="hi__body">
+                        <div class="hi__title">Hey, you!</div>
+                        <ul class="hi__list">
+                           <!-- как обернуть текст в список одной командой???? закрыть текст в li-->
+                           <li>You're going to do great!</li>
+                           <li>Never give up!</li>
+                           <li>You already know more today than you did yesterday!</li>
+                           <li>You're not such a lonely looser?</li>
+                        </ul>
+                     </div>
+                     <div class="hi__image">
+                        <img src="image/hi_img.jpg" alt="Just image">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- уникальный блок - case -->
+            <div class="what">
+               <!-- универсальный контейнер - packet  -->
+               <div class="container">
+                  <!-- уникальный флексбокс для этого блока -->
+                  <div class="what__box">
+                     <div class="what__body">
+                        <!-- дать имя по БЭМ "блок__элемент тот же элемент в общем контексте кода" -->
+                     <div class="what__title title">What is the FlexBox?</div>
+                        <div class="what__text text">
+                           <p>
+                           Flexbox is a whole module that contains a set of properties and their values for both the parent of the flex-container and its children flex-elements.
+                           </p>
+                           <p>
+                           The main advantage of flexible FLEX markup is the ability to change the width/height space around and the order of the flex-elements in order to best fill the available space flex-container. 
+                           </p>
+                        </div>
+                     </div>
+                     <div class="what__image">
+                        <img src="image/what_img.jpg" alt="Just image">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- ! более сложная конструкция: блок: общий флекс-бокс: 4 мини-блока (колонки): в каждом из них по мини-флексбоксу -->
+            <div class="columns">
+               <div class="container">
+                  <!-- дать имя по БЭМ "блок__элемент тот же элемент в общем контексте кода" -->
+                  <div class="columns__title title">Columns with flex-containers</div>
+                  <div class="columns__box">
+                     <div class="columns__column">
+                     <!-- дать +1 новое имя - чтоб не нагружать имена вложенных классов (body, img) все классы дальше привязать к нему-->
+                     <!-- ! это нахуя непонятно ? никаких стией не задаем -->
+                        <div class="columns__item item">
+                           <div class="item__box">
+                              <div class="item__image">
+                                 <img src="image/columns_img.jpg" alt="Just image">
+                              </div>
+                              <div class="item__body">
+                                 <div class="item__title">The description for the image</div>
+                                 <div class="item__text text">
+                                    <p>Pariatur iure ab sunt nesciunt, quibusdam odio iste cumque itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="columns__column">
+                        <!-- дать +1 новое имя - чтоб не нагружать имена вложенных классов (body, img) все классы дальше привязать к нему-->
+                        <div class="columns__item item">
+                           <div class="item__box">
+                              <div class="item__image">
+                                 <img src="image/columns_img.jpg" alt="Just image">
+                              </div>
+                              <div class="item__body">
+                                 <div class="item__title">The description for the image</div>
+                                 <div class="item__text text">
+                                    <p>Pariatur iure ab sunt nesciunt, quibusdam odio iste cumque itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.                      
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="columns__column">
+                     <!-- дать +1 новое имя - чтоб не нагружать имена вложенных классов (body, img) все классы дальше привязать к нему-->
+                        <div class="columns__item item">
+                           <div class="item__box">
+                              <div class="item__image">
+                                 <img src="image/columns_img.jpg" alt="Just image">
+                              </div>
+                              <div class="item__body">
+                                 <div class="item__title">The description for the image</div>
+                                 <div class="item__text text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis facilis fuga, illo at. Natus eos, eligendi illum rerum omnis porro ex, magni, explicabo veniam incidunt in quam sapiente ut ipsum.                              
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="columns__column">
+                     <!-- дать +1 новое имя - чтоб не нагружать имена вложенных классов (body, img) все классы дальше привязать к нему-->
+                        <div class="columns__item item">
+                           <div class="item__box">
+                              <div class="item__image">
+                                 <img src="image/columns_img.jpg" alt="Just image">
+                              </div>
+                              <div class="item__body">
+                                 <div class="item__title">The description for the image</div>
+                                 <div class="item__text text">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis facilis fuga, illo at. Natus eos, eligendi illum rerum omnis porro ex, magni, explicabo veniam incidunt in quam sapiente ut ipsum.                              
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="vertical">
+               <div class="container">
+                  <div class="vertical__title title">Vertical alignment</div>
+                  <div class="vertical__body">
+                     <div class="vertical__box">
+                        <div class="vertical__column">
+                           <div class="vertical__item">
+                              <div class="vertical__subtitle">CSS</div>
+                              <div class="vertical__label">SCSS</div>
+                              <div class="vertical__text">
+                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatum iste fuga voluptates aut. Saepe odio veritatis placeat voluptate dolorem deleniti fuga quisquam, expedita magni vitae asperiores rem alias! Reprehenderit.                              
+                                 </p>
+                              </div>
+                              <a href="#" class="vertical__btn">Read more</a>
+                           </div>
+                        </div>
+                        <div class="vertical__column">
+                           <div class="vertical__item">
+                              <div class="vertical__subtitle">CSS</div>
+                              <div class="vertical__label">Flexbox</div>
+                              <div class="vertical__text">
+                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatum iste fuga voluptates aut. Saepe odio veritatis placeat voluptate dolorem deleniti fuga quisquam, expedita magni vitae asperiores rem alias! Reprehenderit.  
+                                 </p>
+                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatum iste fuga voluptates aut. Saepe odio veritatis placeat voluptate dolorem deleniti fuga quisquam, expedita magni vitae asperiores rem alias! Reprehenderit.                            
+                                 </p>
+                              </div>
+                              <a href="#" class="vertical__btn">Read more</a>
+                           </div>
+                        </div>
+                        <div class="vertical__column">
+                           <div class="vertical__item">
+                              <div class="vertical__subtitle">CSS</div>
+                              <div class="vertical__label">Grid</div>
+                              <div class="vertical__text">
+                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatum iste fuga voluptates aut. Saepe odio veritatis placeat voluptate dolorem deleniti fuga quisquam, expedita magni vitae asperiores rem alias! Reprehenderit.                                 
+                                 </p>
+                              </div>
+                              <a href="#" class="vertical__btn">Read more</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <footer class="footer">
+            <div class="container">
+               <div class="footer__row">
+                  <div class="footer__text">All rights reserved (c) 2022</div>
+               </div>
+            </div>
+         </footer>
+      </div>
+   </body>
+</html>
+
+
+<!-- 
+                           <div class="vertical__block">
+                           <div class="block__box">
+                              
+                                 <div class="block__title">CSS</div>
+                                 <div class="block__subtitle">Flexbox</div>
+                                 <div class="block__text">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatum iste fuga voluptates aut. Saepe odio veritatis placeat voluptate dolorem deleniti fuga quisquam, expedita magni vitae asperiores rem alias! Reprehenderit.                                 
+                                    </p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatum iste fuga voluptates aut. Saepe odio veritatis placeat voluptate dolorem deleniti fuga quisquam, expedita magni vitae asperiores rem alias! Reprehenderit.                                 
+                                    </p>
+                                 </div>
+                              
+                              <div class="block__button">
+                                 <button type="button">
+                                    <div class="button__text">Read more</div>
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="vertical__block">
+                           <div class="block__box">
+                              
+                                 <div class="block__title">CSS</div>
+                                 <div class="block__subtitle">Grid</div>
+                                 <div class="block__text">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatum iste fuga voluptates aut. Saepe odio veritatis placeat voluptate dolorem deleniti fuga quisquam, expedita magni vitae asperiores rem alias! Reprehenderit. Saepe odio veritatis placeat voluptate dolorem deleniti fuga quisquam, expedita magni vitae asperiores rem alias!                                 
+                                    </p>
+                                 </div>
+                              
+                              <div class="block__button">
+                                 <button type="button">
+                                    <div class="button__text">Read more</div>
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+ -->
